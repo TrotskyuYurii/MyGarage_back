@@ -5,7 +5,7 @@ import cookiesParser from 'cookie-parser';
 // import { env } from './utils/env.js';
 // import { ENV_VARS, UPLOAD_DIR } from './const/const.js';
 
-// import rootRouter from './routers/rootRouter.js';
+import rootRouter from './routers/rootRouter.js';
 // import { errorHandlerMiddleware } from './middlewares/errorHandler.js';
 // import { notFoundHandler } from './middlewares/notFoundHandler.js';
 
@@ -36,7 +36,7 @@ export const setupServer=()=> {
     app.use(cookiesParser());
 
     //Підключення маршрутів
-    // app.use(rootRouter);
+    app.use(rootRouter);
 
 
 
