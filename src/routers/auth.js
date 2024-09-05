@@ -13,7 +13,9 @@ const authRouter = Router();
 
 //обробка запитів
 authRouter.get('/ping', (req, res) => res.send('pong'));
-authRouter.post('/register', validateBody(registerUserSchema),ctrlWrapper(registerUserController));
+authRouter.post('/register', ctrlWrapper(registerUserController));
+// authRouter.post('/register', validateBody(registerUserSchema),ctrlWrapper(registerUserController));
+
 // authRouter.post('/login',validateBody(loginUserSchema),ctrlWrapper(loginUserController));
 // authRouter.post('/logout', ctrlWrapper(logoutController));
 // authRouter.post('/refresh', ctrlWrapper(refreshTokenController));
