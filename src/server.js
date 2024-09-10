@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import cookiesParser from 'cookie-parser';
-
-// import { env } from './utils/env.js';
+import { env } from './utilites/env.js';
+import { ENV_VARS } from './const/const.js';
 // import { ENV_VARS, UPLOAD_DIR } from './const/const.js';
 
 import rootRouter from './routers/rootRouter.js';
@@ -41,12 +41,12 @@ export const setupServer=()=> {
 
 
     //Запуск сервера
-    // const PORT = env(ENV_VARS.PORT, 3000);
-    const PORT = 3000;
+    const PORT = env(ENV_VARS.PORT, 3000);
+    // const PORT = 3000;
 
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
-    
+
 }
 
