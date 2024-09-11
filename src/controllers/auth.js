@@ -5,12 +5,12 @@ import { registerUser} from "../services/user.js";
 //Реєстрація авторизація
 export const registerUserController = async (req, res) => {
 
-    const user = await registerUser(req.body);
+    const newuser = await registerUser(req.body);
     // const { password, ...userWithoutPassword } = user.toObject();
 
     res.json({
       status: 201,
       message: 'Successfully registered a user!',
-      data: { user: "New User" },
+      data: { newuser},
     });
   };
